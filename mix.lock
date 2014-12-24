@@ -1,0 +1,4 @@
+%{"cowboy": {:hex, :cowboy, "1.0.0"},
+  "cowlib": {:hex, :cowlib, "1.0.0"},
+  "plug": {:git, "git://github.com/elixir-lang/plug.git", "7040c89cb4cf1f1c6afdee379e5982a07d77a6c3", [ref: "7040c89cb4cf1f1c6afdee379e5982a07d77a6c3"]},
+  "ranch": {:hex, :ranch, "1.0.0"}}
