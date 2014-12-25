@@ -32,4 +32,10 @@ defmodule SeitenTest do
     assert %{resources: [11,12,13,14,15,16,17,18,19,20]} = paged
     %{page: 2} = paged
   end
+
+  test "paginated html" do
+    conn = %Plug.Conn{params: %{"users_page" => "2"}}
+    paged = Users.paginate(in_list, conn)
+    assert {:safe, html} = Users.paginated_html(conn, paged)
+  end
 end
