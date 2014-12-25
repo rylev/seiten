@@ -11,17 +11,21 @@ Add Seiten to your deps in your `mix.exs` file.
 
 ```elixir
 def deps do
-  [{:plug, "~> 0.9.0"}
-   {:seiten "0.0.1"}]
+  [{:seiten "0.0.1"}]
 end
 ```
 
 ## Usage
 
 ```elixir
-## render paginated links
-<%= paginate @conn, @all_my_resources %>
+defmodule Users do
+  use Seiten
+end
 
-## access your resources on the current page
-paginated_resources(conn, all_my_resources)
+my_resources = Enum.to_list [1..100]
+
+paged = Users.paginate(conn, my_resources)
+
+# In a view:
+<%= Users.paginated_html(conn, paged) %>
 ```
